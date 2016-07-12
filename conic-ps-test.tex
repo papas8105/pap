@@ -1,0 +1,68 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\newcommand{\ttt}{\texttt}
+\setlength{\parindent}{0em}
+\usepackage{xltxtra}
+\usepackage{kmath}
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+\usepackage{pstricks-add}
+\usepackage{epsfig}
+\begin{document}
+\textbf{A conical glass is filled with water at a steady rate, prove that the function of the height of the surface of the water in the glass with 
+respect to time has a cube root behavior.}
+\[
+\newrgbcolor{ffqqtt}{1 0 0.2}
+\newrgbcolor{zzffff}{0.6 1 1}
+\newrgbcolor{ttttff}{0.2 0.2 1}
+\psset{xunit=0.6610169491525423cm,yunit=0.5789473684210527cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-5.76,-1.2)(6.04,8.3)
+\pspolygon[linewidth=2pt,linecolor=zzffff,fillcolor=zzffff,fillstyle=solid,opacity=0.25](-5,7)(0,7)(0,0)
+\pspolygon[linewidth=2pt,linecolor=yellow,fillcolor=yellow,fillstyle=solid,opacity=0.25](0,0)(0.84,3.04)(0,4)
+\psline(0,0)(-5,7)
+\psline(0,0)(5,7)
+\rput{-0.54}(0.03,6.89){\psellipse(0,0)(5.05,0.89)}
+\psline[linewidth=2pt,linecolor=ffqqtt](0,7)(0,0)
+\rput[tl](-4.94,4.18){$$ \texttt{h} $$}
+\rput{-179.99}(0.04,4){\psellipse[linewidth=2pt,linecolor=ffqqtt,fillcolor=ffqqtt,fillstyle=solid,opacity=0.25](0,0)(2.88,1)}
+\psline[linewidth=2pt,linestyle=dashed,dash=3pt 3pt,linecolor=zzffff](-5,7)(-5,0)
+\psline[linewidth=2pt,linecolor=ffqqtt](3.24,3.68)(3.24,3.98)
+\rput[tl](3.34,4.22){$\texttt{d}h$}
+\psline[linewidth=2pt,linestyle=dashed,dash=3pt 3pt,linecolor=red](0,7)(-5,7)
+\rput[tl](-2.34,7.68){$\texttt{R}$}
+\psline[linewidth=2pt,linestyle=dashed,dash=3pt 3pt,linecolor=ttttff](0,4)(0.84,3.04)
+\rput[tl](0.46,4.14){$r(t)$}
+\rput[tl](4.06,2.74){$h(t)$}
+\psline[linewidth=2pt,linecolor=zzffff](-5,7)(0,7)
+\psline[linewidth=2pt,linecolor=zzffff](0,7)(0,0)
+\psline[linewidth=2pt,linecolor=zzffff](0,0)(-5,7)
+\psline[linewidth=2pt,linecolor=yellow](0,0)(0.84,3.04)
+\psline[linewidth=2pt,linecolor=yellow](0.84,3.04)(0,4)
+\psline[linewidth=2pt,linecolor=yellow](0,4)(0,0)
+\psline[linewidth=2pt,linestyle=dashed,dash=3pt 3pt,linecolor=yellow](4,4)(4,0)
+\end{pspicture*}
+\]
+From the similarity of the cyan and the yellow triangles we get 
+\[\frac{R}{h} = \frac{r(t)}{h(t)}\Rightarrow r(t) = c\cdot h(t)\]
+the infinitesimal volume of water added is
+\[
+ \frac{\ttt{d}V}{\ttt{d}t} = \pi\cdot r(t)^{2}\cdot \frac{\ttt{d}h}{\ttt{d}{t}}\Rightarrow c_{1} = \pi\cdot r(t)^{2}\cdot \frac{\ttt{d}h}{\ttt{d}{t}}
+\]
+with substitution we get
+\begin{eqnarray*}
+ c_1 & = & \pi\cdot c^2\cdot h(t)^{2} \cdot \frac{\ttt{d}h}{\ttt{d}t}\\
+ h(t)^{2}\ttt{d}h & = & c_{1} \frac{\ttt{d}t}{c^{2} \pi}\\
+ \int h(t)^{2}\;\ttt{d}h & = & \frac{c_{1}}{c^{2}\pi}\int1\;\ttt{d}t\\
+ \frac{h(t)^{3}}{3} & = & \frac{c_{1}}{c^{2}\pi}t + c_2\\
+ h(t)^{3} & = & 3\frac{c_{1}}{c^{2}\pi}t + 3c_2\\
+ h(t)  & = & \sqrt[3]{3\frac{c_{1}}{c^{2}\pi}t + 3c_2}
+\end{eqnarray*}
+.
+\end{document}
